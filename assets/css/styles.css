@@ -1,0 +1,361 @@
+:root {
+    --bg: #050505;
+    --card-bg: #0a0a0a;
+    --text: #ffffff;
+    --text-muted: #888888;
+    --accent: #5156a0;
+    --border: rgba(255, 255, 255, 0.08);
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --info-bg: #f63b3b1a;
+    --info-border: #f63b3b33;
+    --info-text: #fa6060;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+.nav-btn {
+    background: var(--text);
+    color: var(--bg) !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.hero {
+    padding: 220px 40px 120px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0%, rgba(212, 163, 115, 0.15) 0%, transparent 50%);
+}
+
+.hero-container {
+    max-width: 800px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #07560322;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #119909;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 10vw, 6rem);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin-bottom: 24px;
+    animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.update-banner {
+    background: var(--info-bg);
+    border: 1px solid var(--info-border);
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin: 0 auto 32px;
+    max-width: 650px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.update-icon {
+    background: var(--info-text);
+    color: var(--bg);
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.75rem;
+}
+
+.update-a {
+    color: #c12424;
+}
+
+.update-banner p {
+    color: var(--info-text) !important;
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+    max-width: none !important;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    max-width: 580px;
+    margin: 0 auto 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(115, 123, 212, 0.2);
+}
+
+.btn-secondary {
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--border);
+    transform: translateY(-4px);
+}
+
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 48px 40px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    border-color: rgb(49, 58, 220);
+    transform: translateY(-8px);
+}
+
+.card-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+footer {
+    padding: 120px 40px 60px;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.footer-info h2 {
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+}
+
+.footer-info p {
+    color: var(--text-muted);
+    max-width: 280px;
+}
+
+.footer-grid {
+    display: flex;
+    gap: 100px;
+}
+
+.footer-col h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.footer-col a {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #858383;
+    font-size: 0.8rem;
+}
+
+.footer-bottom a {
+    color: #858383;
+    font-size: 0.8rem;
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+    .grid-container { grid-template-columns: 1fr; }
+    .footer-content { flex-direction: column; gap: 60px; }
+    .nav-links { display: none; }
+    .update-banner { flex-direction: column; text-align: center; }
+}
+
+:root {
+    --card-bg: #0a0a0a;
+    --text-muted: #888888;
+}
+
+.card-fade {
+    position: relative;
+    overflow: hidden;
+}
+
+.fade-container {
+    position: relative;
+    max-height: 50px;
+    overflow: hidden;
+}
+
+.fade-container p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.fade-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--card-bg));
+    pointer-events: none;
+}
